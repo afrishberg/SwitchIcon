@@ -16,6 +16,30 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity-alias
+                android:icon="@mipmap/ic_launcher_pear"
+                android:roundIcon="@mipmap/ic_launcher_pear_round"
+                android:excludeFromRecents="false"
+                android:name=".Alias1"
+                android:enabled="true"
+                android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+        <activity-alias
+                android:icon="@mipmap/ic_launcher_grapes"
+                android:roundIcon="@mipmap/ic_launcher_grapes_round"
+                android:excludeFromRecents="false"
+                android:name=".Alias2"
+                android:enabled="true"
+                android:targetActivity=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
     </application>
 
 </manifest>
