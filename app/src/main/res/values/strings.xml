@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">SwitchIconApp</string>
+
+    <dimen name="size">72dp</dimen>
 </resources>

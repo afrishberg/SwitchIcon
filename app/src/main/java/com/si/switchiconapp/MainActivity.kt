@@ -62,11 +62,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun getSelectedIconIndex() : Int {
-        return getPreferences(MODE_PRIVATE).getInt(SELECTED_ICON_INDEX_KEY, 0)
+        return getSharedPreferences("GLOBAL", MODE_PRIVATE).getInt(SELECTED_ICON_INDEX_KEY, 0)
     }
 
     fun setSelectedIconIndex(index: Int) {
-        getPreferences(MODE_PRIVATE).edit().putInt(SELECTED_ICON_INDEX_KEY, index).apply()
+        getSharedPreferences("GLOBAL", MODE_PRIVATE).edit().putInt(SELECTED_ICON_INDEX_KEY, index).apply()
     }
 
     fun populateSelectedIcon() {
@@ -79,11 +79,15 @@ class MainActivity : AppCompatActivity() {
                 view.setBackgroundColor(Color.TRANSPARENT)
             }
         }
+        temp_iv.setImageDrawable(null)
+        temp_iv.setImageDrawable(TempDrawableClass())
+
     }
 
     private fun setEnabledAlias() {
         val pm = packageManager
-        val selectedIconIndex = getSelectedIconIndex()
+//        val selectedIconIndex = getSelectedIconIndex()
+        val selectedIconIndex = 0
         iconDataSet.forEachIndexed { index, iconData ->
             val enabled = index == selectedIconIndex
             pm.setComponentEnabledSetting(
